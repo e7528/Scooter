@@ -1,1 +1,94 @@
-Insert here aragourn
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    int choice, payment, bill=0, totalBill = 0, computedBill = 0, hours=0, currentBill=0, totalHours=0;
+
+    do {
+        
+        cout << "SkootSkoots Rentals\n"
+            << "1. Basic Scooter - 30/Hour\n"
+            << "2. Advance Scooter - 50/Hour\n"
+            << "3. Pro Scooter - 80/hour\n"
+            << ":: ";
+        cin >> choice;
+
+        
+        switch (choice) {
+        case 1:
+            bill= currentBill + 30;
+            cout << "how many hours?\n";
+            cin >> hours;
+            break;
+        case 2:
+            bill = currentBill + 50;
+            cout << "how many hours?\n";
+            cin >> hours;
+            break;
+        case 3:
+            bill += 80;
+            cout << "how many hours?\n";
+            cin >> hours;
+            break;
+          
+        case 0:
+            system("cls");
+            cout << "Computing bill...\n\n";
+            system("pause");
+            system("cls");
+            break;
+            
+        default:
+            system("cls");
+            cout << "Incorrect Input";
+            system("pause");
+            system("cls");
+        }
+
+        
+        if (0 < choice && 3 >= choice) {
+            totalHours = hours * bill;
+            currentBill = totalHours;
+            system("cls");
+            cout << "Current Bill: " << currentBill <<"\n";
+            
+        }
+    
+
+    do {
+      
+        cout << "Your bill is " << currentBill << "\n"
+            << "Input Payment: ";
+        cin >> payment;
+
+
+        computedBill = currentBill - payment;
+
+
+        if (0 > computedBill) {
+            cout << "You have a change " << computedBill * -1 << "\n";
+
+        }
+        else if (0 == computedBill) {
+            cout << "Payment Complete\n";
+        }
+        else {
+            system("cls");
+            cout << "Insufficient pay! PAY UP!!!\n\n";
+            system("pause");
+            system("cls");
+        }
+       
+    } while (0 < computedBill);
+
+    cout << "You can take the item now\n\n\n";
+
+    system("pause");
+    cout << "press 1 to Purchase again \n"
+         << "Press 0 to exit\n";
+    cin >> choice;
+   
+    } while (choice != 0);
+
+}
