@@ -1,9 +1,11 @@
-//update 0.0.3 added versions
+//update 0.0.4 axel
 
 #include <iostream>
 using namespace std;
 
-string pickScooter(int choice) {
+int total = 0;
+
+void pickScooter(int choice) {
 
     string scooter1 = "Kiddie Scooter";
     string scooter2 = "3 Wheel Scooter";
@@ -13,38 +15,89 @@ string pickScooter(int choice) {
     switch (choice) {
     case 1:
         cout << "You chose the Kiddie Scooter!\n";
-        return scooter1;
         break;
     case 2:
         cout << "You chose the 3 Wheel Scooter!\n";
-        return scooter2;
         break;
     case 3:
         cout << "You chose the 2 Wheel Scooter!\n";
-        return scooter3;
         break;
     default:
-        return 0;
+        cout << "Invalid Response!\n";
     }
+
+}
+
+void scooterRate(int choice2) {
+
+
+    if (choice2 == 1) {
+
+        total = 30;
+        cout << "The payment for basic is " << total << endl;
+        
+    }
+    else if (choice2 == 2) {
+
+        total = 50;
+        cout << "The payment for advance is " << total << endl;
+
+    }
+    else if (choice2 == 3) {
+
+        total = 80;
+        cout << "The payment for pro is " << total << endl;
+
+        
+    }
+    else {
+        cout << "Invalid Response!\n";
+    }
+
+}
+
+void currencySum(int hours) {
+
+    int result = hours * total;
+    cout << result;
+    
 
 }
 
 int main() {
 
     int scooterPicked;
+    int PickedRate;
+    int hours;
 
-    cout << "Please enter your choice" << endl;
-    cout << "[1] Kiddie Scooter" << endl;
-    cout << "[2] 3 Wheel Scooter" << endl;
-    cout << "[3] 2 Wheel Scooter" << endl;
-    cin >> scooterPicked;
-    pickScooter(scooterPicked);
+    do {
+        cout << endl;
+        cout << "Please enter your choice\n";
+        cout << "[1] Kiddie Scooter\n";
+        cout << "[2] 3 Wheel Scooter\n";
+        cout << "[3] 2 Wheel Scooter\n";
+        cin >> scooterPicked;
+        
+        system("cls");
 
-    cout << "Please Choose the version of your scooter";
-    cout << "[1]Basic 30/hour: Kick Scooter";
-    cout << "[2]Advanced 50/hour: Slow Electric Scooter";
-    cout << "[3]Pro 80/hour: Fast Electric Scooter";
+        pickScooter(scooterPicked);
 
+        cout << "Please Choose the hour rate of your scooter\n";
+        cout << "[1]Basic 30/hour\n";
+        cout << "[2]Advanced 50/hour\n";
+        cout << "[3]Pro 80/hour\n";
+        cin >> PickedRate;
+
+        system("cls");
+
+        scooterRate(PickedRate);
+
+        cout << "How many hours do you want to rent it?: ";
+        cin >> hours;
+
+        currencySum(hours);
+
+    } while (scooterPicked <= 3);
 
     return 0;
 }
