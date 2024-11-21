@@ -1,4 +1,4 @@
-//update 0.0.3
+//update 0.0.3 added versions
 
 #include <iostream>
 using namespace std;
@@ -39,6 +39,11 @@ int main() {
     cout << "[3] 2 Wheel Scooter" << endl;
     cin >> scooterPicked;
     pickScooter(scooterPicked);
+
+    cout << "Please Choose the version of your scooter";
+    cout << "[1]Basic 30/hour: Kick Scooter";
+    cout << "[2]Advanced 50/hour: Slow Electric Scooter";
+    cout << "[3]Pro 80/hour: Fast Electric Scooter";
 
 
     return 0;
