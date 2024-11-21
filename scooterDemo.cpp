@@ -1,5 +1,8 @@
 //update 0.0.2
 
+#include <iostream>
+using namespace std;
+
 string pickScooter(int choice) {
 
 	string scooter1 = "Kiddie Scooter";
@@ -17,9 +20,21 @@ string pickScooter(int choice) {
 			return scooter2;
 			break;
 		case 3:
-			cout << "You chose the 2 Wheel Scooter!\m";
+			cout << "You chose the 2 Wheel Scooter!\n";
 			return scooter3;
 			break;
 	}
 
+}
+
+int main() {
+
+	int scooterPicked;
+
+	cin >> scooterPicked;
+
+	pickScooter(scooterPicked);
+	
+
+	return 0;
 }
