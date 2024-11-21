@@ -1,3 +1,5 @@
+//update 0.0.2
+
 string pickScooter(int choice) {
 
 	string scooter1 = "Kiddie Scooter";
